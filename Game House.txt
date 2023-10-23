@@ -1,0 +1,54 @@
+import random
+z = input("Dost Thou Wish To Partake In A Merry Game? (Y/N): ")
+if z.upper() == "N":
+    print("Bye Bye")
+elif z.upper() == "Y":
+    y = input("Choose The Game: (Floaty Guess/Rock, Paper, Scissors/Rolling Dice Simulator): ")
+    if y.upper() == "ROLLING DICE SIMULATOR":
+        dice_sides = int(input("Sides Of The Dice: "))
+        def random_number():
+            return random.randint(1, dice_sides)
+        print(random_number())
+    elif y.upper() == "FLOATY GUESS":
+        correct_number = random.randint(0, 100)
+        while True:
+            try:
+                player_guess = float(input("Guess the number between 0 and 100: "))
+                if player_guess == correct_number:
+                    print("Huzzah! Thou Hast Guessed The Correct Number!")
+                    break
+                elif player_guess > correct_number:
+                    print("Too High! Try Again")
+                else:
+                    print("Too Low! Try Again")
+            except ValueError:
+                print("Invalid input! Prithee enter a valid number.")
+        print("The correct number was:", correct_number)
+    elif y.upper() == "ROCK, PAPER, SCISSORS":
+        def computer_pick():
+            choices = ("Rock", "Paper", "Scissors")
+            return random.choice(choices)
+        while True:
+            enter_choice = input("Do you want to play Rock, Paper, Scissors with me? (Y/N): ").upper()
+            if enter_choice == "Y":
+                player_choice = input("Sure, let's play. First, pick from (Rock/Paper/Scissors): ").upper()
+                computer_choice = computer_pick()
+                print(f"\nThou Hast Chosen: {player_choice}")
+                print(f"I Chose: {computer_choice}\n")
+                if player_choice == computer_choice:
+                    print("It's A Tie")
+                elif (player_choice == "ROCK" and computer_choice == "SCISSORS") or \
+                     (player_choice == "PAPER" and computer_choice == "ROCK") or \
+                     (player_choice == "SCISSORS" and computer_choice == "PAPER"):
+                    print("You Won")
+                else:
+                    print("I Won")
+            elif enter_choice == "N":
+                print("Thanks for playing!")
+                break
+            else:
+                print("Invalid Input. Choose from (Y/N)")
+    else:
+        print("Invalid Input. Choose From (Floaty Guess/Rock, Paper, Scissors/Rolling Dice Simulator)")
+else:
+    print("Invalid Input. Choose From (Y/N)")

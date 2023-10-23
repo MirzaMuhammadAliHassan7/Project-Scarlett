@@ -1,0 +1,84 @@
+import random
+def rand_equadd():
+    x = random.randint(1, 999)
+    y = random.randint(1, 999)
+    z = x + y
+    return x, y, z
+def rand_equsub():
+    x = random.randint(1, 999)
+    y = random.randint(1, 999)
+    x, y = max(x, y), min(x, y)
+    z = x - y
+    return x, y, z
+def rand_equmul():
+    x = random.randint(1, 99)
+    y = random.randint(1, 9)
+    z = x * y
+    return x, y, z
+def rand_equdiv():
+    y = random.randint(1, 9)
+    x = y * random.randint(1, 11)
+    z = x / y
+    return x, y, z
+a = b = c = d = e = f = g = h = q = r = s = t = 0
+practice_mode = input("Hello. What Do You Want To Practice Today? (+, -, *, /) ")
+if practice_mode not in ("+", "-", "*", "/"):
+    print("Invalid practice mode. Please choose from '+', '-', '*', or '/'.")
+else:
+    while True:
+        if practice_mode == "+":
+            x, y, z = rand_equadd()
+            b += 1
+        elif practice_mode == "-":
+            x, y, z = rand_equsub()
+            d += 1
+        elif practice_mode == "*":
+            x, y, z = rand_equmul()
+            f += 1
+        elif practice_mode == "/":
+            x, y, z = rand_equdiv()
+            h += 1
+        ans = input(f"Calculate: {x} {practice_mode} {y} = ")
+        if ans.upper() == "QUIT":
+            print("Goodbye Player")
+            total_questions = b + d + f + h
+            print("Total Questions Attempted In Addition:", b)
+            print("Total Questions Attempted In Subtraction:", d)
+            print("Total Questions Attempted In Multiplication:", f)
+            print("Total Questions Attempted In Division:", h)
+            print("Total Correctly Answered:", a + c + e + g)
+            print("Total Incorrectly Answered:", q + r + s + t)
+            print("Correctly Answered In Addition:", a)
+            print("Correctly Answered In Subtraction:", c)
+            print("Correctly Answered In Multiplication:", e)
+            print("Correctly Answered In Division:", g)
+            print("Incorrectly Answered In Addition:", q)
+            print("Incorrectly Answered In Subtraction:", r)
+            print("Incorrectly Answered In Multiplication:", s)
+            print("Incorrectly Answered In Division:", t)
+            break
+        
+        try:
+            user_ans = float(ans)
+            if user_ans == z:
+                print("Correct Answer!")
+                if practice_mode == "+":
+                    a += 1
+                elif practice_mode == "-":
+                    c += 1
+                elif practice_mode == "*":
+                    e += 1
+                elif practice_mode == "/":
+                    g += 1
+            else:
+                print(f"Wrong Answer! The correct answer is: {z}")
+                if practice_mode == "+":
+                    q += 1
+                elif practice_mode == "-":
+                    r += 1
+                elif practice_mode == "*":
+                    s += 1
+                elif practice_mode == "/":
+                    t += 1
+        except ValueError:
+            print("Invalid input. Please enter a number or 'QUIT'.")

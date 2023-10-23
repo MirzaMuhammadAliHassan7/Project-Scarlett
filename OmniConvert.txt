@@ -1,0 +1,272 @@
+import math
+def temperature_converter():
+    while True:
+        choice = input('Kelvin, Celsius, or Fahrenheit: ')
+        if choice.upper() == 'KELVIN':
+            t = input("What Unit Do You Want To Convert To: (Celsius/Fahrenheit): ")
+            if t.upper() == "CELSIUS":
+                kelvin_temp = float(input('Enter Your Temperature In Kelvin: '))
+                celsius_temp = kelvin_temp - 273.15
+                print('Here Is Your Temperature In Celsius:', celsius_temp, '°C')
+            elif t.upper() == "FAHRENHEIT":
+                kelvin_temp = float(input('Enter Your Temperature In Kelvin: '))
+                fahrenheit_temp = (kelvin_temp - 273.15) * 1.8 + 32
+                print('Here Is Your Temperature In Fahrenheit:', fahrenheit_temp, '°F')
+            else:
+                print('Error: Invalid choice. Please choose "Celsius" or "Fahrenheit".')
+        elif choice.upper() == 'CELSIUS':
+            celsius_temp = float(input('Enter Your Temperature In Celsius: '))
+            t = input("What Unit Do You Want To Convert To: (Kelvin/Fahrenheit): ")
+            if t.upper() == "KELVIN":
+                kelvin_temp = celsius_temp + 273.15
+                print('Here Is Your Temperature In Kelvin:', kelvin_temp, 'K')
+            elif t.upper() == "FAHRENHEIT":
+                fahrenheit_temp = celsius_temp * 1.8 + 32
+                print("Here Is Your Temperature In Fahrenheit:", fahrenheit_temp, '°F')
+            else:
+                print('Error: Invalid choice. Please choose "Kelvin" or "Fahrenheit".')
+        elif choice.upper() == "FAHRENHEIT":
+            fahrenheit_temp = float(input("Enter Your Temperature In Fahrenheit: "))
+            t = input("What Unit Do You Want To Convert To: (Kelvin/Celsius): ")
+            if t.upper() == "KELVIN":
+                kelvin_temp = (fahrenheit_temp - 32) * (5 / 9) + 273.15
+                print("Here Is Your Temperature In Kelvin:", kelvin_temp, 'K')
+            elif t.upper() == "CELSIUS":
+                celsius_temp = (fahrenheit_temp - 32) * (5 / 9)
+                print("Here Is Your Temperature In Celsius:", celsius_temp, '°C')
+            else:
+                print('Error: Invalid choice. Please choose "Kelvin" or "Celsius".')
+        else:
+            print('Error: Invalid choice. Please choose "Kelvin", "Celsius", or "Fahrenheit".')
+        continue_choice = input("Would You Like To Continue? (Y/N) ")
+        if continue_choice.upper() != "Y":
+            print("Goodbye")
+            break
+def area_calculator():
+    while True:
+        q = input("Do You Want To Calculate The Area Of A Shape? (Y/N) ")
+        if q.upper() == "Y":
+            s = input("Choose A Shape: (Triangle/Square/Rectangle/Parallelogram/Trapezoid/Circle/Semi-Circle/Rhombus) ")
+            if s.upper() == "TRIANGLE":
+                x = float(input("Provide The Base Of The Triangle: "))
+                y = float(input("Provide The Height Of The Triangle: "))
+                a = x * y / 2
+                print("The Area of the Triangle is:", a)
+            elif s.upper() == "SQUARE":
+                x = float(input("Provide The Length Of The Square: "))
+                a = x ** 2
+                print("The Area of the Square is:", a)
+            elif s.upper() == "RECTANGLE":
+                x = float(input("Provide The Length Of The Rectangle: "))
+                y = float(input("Provide The Height Of The Rectangle: "))
+                a = x * y
+                print("The Area of the Rectangle is:", a)
+            elif s.upper() == "PARALLELOGRAM":
+                x = float(input("Provide The Base Of The Parallelogram: "))
+                y = float(input("Provide The Height Of The Parallelogram: "))
+                a = x * y
+                print("The Area Of The Parallelogram Is:", a)
+            elif s.upper() == "TRAPEZOID":
+                x = float(input("Provide The Upper Base Of The Trapezoid: "))
+                y = float(input("Provide The Lower Base Of The Trapezoid: "))
+                z = float(input("Provide The Height Of The Trapezoid: "))
+                a = (x + y) / 2 * z
+                print("The Area of the Trapezoid is:", a)
+            elif s.upper() == "CIRCLE":
+                x = float(input("Provide The Radius Of The Cirlce: "))
+                a = p * x ** 2
+                print("The Area Of The Circle Is:", a)
+            elif s.upper() == "SEMI-CIRCLE":
+                x = float(input("Provide The Radius Of The Semicircle: "))
+                p = math.pi * x + 2 * x
+                print("The Area Of The Semicircle Is:", p)
+            elif s.upper() == "RHOMBUS":
+                x = float(input("Provide The Diagonal Of The Rhombus: "))
+                p = x * 4
+            else:
+                print("Invalid shape choice. Please choose from the available options.")
+        elif q.upper() == "SURFACE AREA":
+            s = input("Choose A Shape: (Sphere/Cube/Cuboid/Cylinder/Cone/Pyramid/Torus/Ellipsoid)")
+            if s.upper() == "SPHERE":
+                x = float(input("Provide The Radius Of The Sphere: "))
+                sa = 4 * math.pi * x ** 2
+                print("The Surface Area Of The Sphere Is:", sa)
+            elif s.upper() == "CUBE":
+                x = float(input("Provide The Edge Of The Cube: "))
+                sa = 6 * x ** 2
+                print("The Surface Area Of The Cube Is:", sa)
+            elif s.upper() == "CUBOID":
+                x = float(input("Provide The Length Of The Cuboid: "))
+                y = float(input("Provide The Width Of The Cuboid: "))
+                z = float(input("Provide The Height Of The Cuboid: "))
+                sa = 2 * x * y + 2 * x * z + 2 * y * z
+                print("The Surface Area Of The Cuboid Is:", sa)
+            elif s.upper() == "CYLINDER":
+                x = float(input("Provide The Radius Of The Cylinder: "))
+                y = float(input("Provide The Height Of The Cylinder: "))
+                sa = 2 * math.pi * x * y + 2 * math.pi * x ** 2
+                print("The Surface Area Of The Cylinder Is:", sa)
+            elif s.upper() == "CONE":
+                x = float(input("Provide The Radius Of The Cone: "))
+                y = float(input("Provide THe Height Of The Cone: "))
+                sa = math.pi * x * (x + ((y ** 2 + x ** 2) ** 0.5))
+                print("The Surface Area Of The Sphere Is:", sa)
+            elif s.upper() == "PYRAMID":
+                x = float(input("Provide The Length Of The Pyramid: "))
+                y = float(input("Provide The Width Of The Pyramid: "))
+                z = float(input("Provide The Height Of The Pyramid: "))
+                sa = x * y + x * ((y / 2) ** 2 + z ** 2) ** 0.5 + y * (((x / 2) ** 2) + z ** 2) ** 0.5
+                print("The Surface Area Of The Pyramid Is:", sa)
+            elif s.upper() == "TORUS":
+                x = float(input("Provide The Major Radius Of The Torus: "))
+                y = float(input("Provide The Minor Radius Of The Torus: "))
+                sa = (2 * math.pi * x) * (2 * math.pi * y)
+                print("The Area Of The Torus Is:", sa)
+        elif q.upper() == "N":
+            print("Goodbye")
+            break
+        else:
+            print("Invalid input. Please enter 'Y' to calculate or 'N' to exit.")
+def bit_converter():
+    while True:
+        f = input("Choose A System To Convert From: (Decimal, Binary, Hexadecimal): ")
+        if f.upper() == "DECIMAL":
+            v = int(input("Enter A Decimal Value: "))
+            t = input("Choose A System To Convert To: (Binary, Hexadecimal): ")
+            if t.upper() == "BINARY":
+                a = bin(v)[2:]
+                print(a)
+            elif t.upper() == "HEXADECIMAL":
+                a = hex(v).lstrip("0x")
+                print(a)
+            else:
+                print("Invalid input. Please choose either Binary or Hexadecimal.")
+        elif f.upper() == "BINARY":
+            v = input("Enter A Binary Value: ")
+            t = input("Choose A System To Convert To: (Decimal, Hexadecimal): ")
+            if t.upper() == "DECIMAL":
+                try:
+                    a = int(v, 2)
+                    print(a)
+                except ValueError:
+                    print("Invalid input. Please enter a valid binary number.")
+            elif t.upper() == "HEXADECIMAL":
+                try:
+                    decimal_value = int(v, 2)
+                    a = hex(decimal_value).lstrip("0x")
+                    print(a)
+                except ValueError:
+                    print("Invalid input. Please enter a valid binary number.")
+            else:
+                print("Invalid input. Please choose either Decimal or Hexadecimal.")
+        elif f.upper() == "HEXADECIMAL":
+            v = input("Enter A Hexadecimal Value: ")
+            t = input("Choose A System To Convert To: (Decimal, Binary): ")
+            if t.upper() == "DECIMAL":
+                try:
+                    a = int(v, 16)
+                    print(a)
+                except ValueError:
+                    print("Invalid input. Please enter a valid hexadecimal number.")
+            elif t.upper() == "BINARY":
+                try:
+                    decimal_value = int(v, 16)
+                    a = bin(decimal_value)[2:]
+                    print(a)
+                except ValueError:
+                    print("Invalid input. Please enter a valid hexadecimal number.")
+            else:
+                print("Invalid input. Please choose either Decimal or Binary.")
+        else:
+            print("Invalid input. Please choose either Decimal, Binary, or Hexadecimal.")
+        continue_choice = input("Would You Like To Continue? (Y/N) ")
+        if continue_choice.upper() != "Y":
+            print("Goodbye")
+            break
+def calculator():
+    def avg(x, y):
+        return (x + y) / 2
+    def gcd(x, y):
+        x, y = abs(x), abs(y)
+        while y != 0:
+            x, y = y, x % y
+        return x
+    def lcm(x, y):
+        return abs(int(x) * int(y)) // gcd(x, y)
+    def hypot(x, y):
+        return math.sqrt(x**2 + y**2)
+    def modulus(x, y):
+        return x % y
+    while True:
+        x = float(input("Provide First Value: "))
+        y = float(input("Provide Second Value: "))
+        o = input("Choose an Operation (+, -, *, /, %, ^, max, min, modulus, root, log, avg, hypot, gcd, lcm): ")
+        if o == "+":
+            z = x + y
+        elif o == "-":
+            z = x - y
+        elif o == "*":
+            z = x * y
+        elif o == "/":
+            try:
+                z = x / y
+            except ZeroDivisionError:
+                print("Error: Cannot divide by zero.")
+                continue
+        elif o == "%":
+            try:
+                z = x / y * 100
+            except ZeroDivisionError:
+                print("Error: Cannot divide by zero.")
+                continue
+        elif o == "^":
+            z = x ** y
+        elif o == "max":
+            z = max(x, y)
+        elif o == "min":
+            z = min(x, y)
+        elif o == "modulus":
+            z = modulus(x, y)
+        elif o == "root":
+            if x < 0 or y <= 0:
+                print("Invalid input. Cannot compute the square root.")
+                continue
+            z = x ** (1 / y)
+        elif o == "log":
+            if x <= 0 or y <= 0 or y == 1:
+                print("Invalid input. Cannot compute the logarithm.")
+                continue
+            z = math.log(x, y)
+        elif o == "hypot":
+            z = hypot(x, y)
+        elif o == "avg":
+            z = avg(x, y)
+        elif o == "gcd":
+            z = gcd(x, y)
+        elif o == "lcm":
+            z = lcm(x, y)
+            print("Your Answer (LCM):", z)
+            continue
+        else:
+            print("Invalid Input. Please Try Again")
+            continue
+        r = input("Would You Like To Round Your Answer To The Nearest Integer? (Y/N): ")
+        if r.upper() == "Y":
+            z = round(z)
+        print(z)
+        ee = input("Would You Like To Continue? (Y/N): ")
+        if ee.upper() != "Y":
+            print("Goodbye")
+            break
+while True:
+    coc = input("Do You Want To Use The Temperature Converter, Calculator, Area Calculator, OR Bit Converter? ")
+    if coc.upper() == "TEMPRATURE CONVERTER":
+        temperature_converter()
+    elif coc.upper() == "AREA CALCULATOR":
+        area_calculator()
+    elif coc.upper() == "BIT CONVERTER":
+        bit_converter()
+    elif coc.upper() == "CALCULATOR":
+        calculator()
+    else:
+        print("Error: Invalid choice. Please choose between 'Converter', 'Calculator', 'Area Calculator', or 'Bit Converter'.")

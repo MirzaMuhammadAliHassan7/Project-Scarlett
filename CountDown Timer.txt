@@ -1,0 +1,17 @@
+import time
+from plyer import notification
+def countdown_timer(seconds):
+    while seconds > 0:
+        print("Time Remaining:", seconds)
+        time.sleep(1)
+        seconds -= 1
+    show_notification(user_message)
+def show_notification(message):
+    notification.notify(
+        title="Countdown Timer",
+        message=message,
+        timeout=10
+    )
+user_message = input("What Would You Like The Program To Say When The Time Runs Out? ")
+countdown_time = float(input("Enter Time In Seconds: "))
+countdown_timer(countdown_time)
