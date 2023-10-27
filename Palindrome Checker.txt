@@ -1,0 +1,12 @@
+def main():
+    number = input("Enter A Number: ")
+    if palindrome(number):
+        print(f"{number} Is A Palindrome")
+    else:
+        print(f"{number} Is Not A Palindrome")
+def palindrome(number):
+    number = str(number)
+    reversed_number = number[::-1]
+    return number == reversed_number
+if __name__ == "__main__":
+    main()
