@@ -6,6 +6,7 @@ elif z.upper() == "Y":
     y = input("Choose The Game: (Floaty Guess/Rock, Paper, Scissors/Rolling Dice Simulator): ")
     if y.upper() == "ROLLING DICE SIMULATOR":
         dice_sides = int(input("Sides Of The Dice: "))
+
         def random_number():
             return random.randint(1, dice_sides)
         print(random_number())
