@@ -8,17 +8,21 @@ def input_customer_info():
     customer_data["Birth Country"] = input("Enter Birth Country: ")
     customer_data["Birth Continent"] = input("Enter Birth Continent: ")
     return customer_data
+
+
 def save_customer_info_to_file(customer_info, customer_number):
     customer_file_name = f"Customer{customer_number}.txt"
     with open(customer_file_name, "w") as file:
         for key, value in customer_info.items():
             file.write(f"{key}: {value}\n")
     print(f"Customer {customer_number} data has been saved to {customer_file_name}")
+
+
 customer_count = 1
 while True:
     customer_info = input_customer_info()
     save_customer_info_to_file(customer_info, customer_count)
     customer_count += 1
-    add_another = input("Do you want to add another customer? (yes/no): ")
+    add_another = input("Do you want to add another customer? (YES/NO): ")
     if add_another.upper() != "YES":
         break
