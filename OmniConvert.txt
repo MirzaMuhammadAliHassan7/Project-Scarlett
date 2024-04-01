@@ -7,11 +7,11 @@ def temperature_converter():
             if t.upper() == "CELSIUS":
                 kelvin_temp = float(input('Enter Your Temperature In Kelvin: '))
                 celsius_temp = kelvin_temp - 273.15
-                print('Here Is Your Temperature In Celsius:', celsius_temp, '°C')
+                print('Here Is Your Temperature In Celsius:', celsius_temp, 'ï¿½C')
             elif t.upper() == "FAHRENHEIT":
                 kelvin_temp = float(input('Enter Your Temperature In Kelvin: '))
                 fahrenheit_temp = (kelvin_temp - 273.15) * 1.8 + 32
-                print('Here Is Your Temperature In Fahrenheit:', fahrenheit_temp, '°F')
+                print('Here Is Your Temperature In Fahrenheit:', fahrenheit_temp, 'ï¿½F')
             else:
                 print('Error: Invalid choice. Please choose "Celsius" or "Fahrenheit".')
         elif choice.upper() == 'CELSIUS':
@@ -22,7 +22,7 @@ def temperature_converter():
                 print('Here Is Your Temperature In Kelvin:', kelvin_temp, 'K')
             elif t.upper() == "FAHRENHEIT":
                 fahrenheit_temp = celsius_temp * 1.8 + 32
-                print("Here Is Your Temperature In Fahrenheit:", fahrenheit_temp, '°F')
+                print("Here Is Your Temperature In Fahrenheit:", fahrenheit_temp, 'ï¿½F')
             else:
                 print('Error: Invalid choice. Please choose "Kelvin" or "Fahrenheit".')
         elif choice.upper() == "FAHRENHEIT":
@@ -33,7 +33,7 @@ def temperature_converter():
                 print("Here Is Your Temperature In Kelvin:", kelvin_temp, 'K')
             elif t.upper() == "CELSIUS":
                 celsius_temp = (fahrenheit_temp - 32) * (5 / 9)
-                print("Here Is Your Temperature In Celsius:", celsius_temp, '°C')
+                print("Here Is Your Temperature In Celsius:", celsius_temp, 'ï¿½C')
             else:
                 print('Error: Invalid choice. Please choose "Kelvin" or "Celsius".')
         else:
@@ -73,7 +73,7 @@ def area_calculator():
                 a = (x + y) / 2 * z
                 print("The Area of the Trapezoid is:", a)
             elif s.upper() == "CIRCLE":
-                x = float(input("Provide The Radius Of The Cirlce: "))
+                x = float(input("Provide The Radius Of The Circle: "))
                 a = p * x ** 2
                 print("The Area Of The Circle Is:", a)
             elif s.upper() == "SEMI-CIRCLE":
